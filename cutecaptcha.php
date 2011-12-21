@@ -11,25 +11,26 @@ Description: A cute Captcha plugin for WordPress comments.
    This plugin is not planned for cached pages, due to using a session variable to validate comments.
    It is possible to set a custom key in $cute_captcha_options['cached'] to enable the use with cached pages
    and/or disable session use, however the protection is not as good it will only prevent most of the bots to post.
-   To use it well with cached pages it needs to be adapted into page using AJAX.
 */
 
+/* The path where the images are. */
+$cute_captcha_path = '/wp-content/plugins/cutecaptcha/images/';
 
 $cute_captcha_images = array(
-    'elephant' => array('path' => '/wp-content/plugins/cutecaptcha/images/1.gif',
+    'elephant' => array('path' => '1.gif',
         'messages' => array('The elephant looks down at you.')
     ),
-    'lion' => array('path' => '/wp-content/plugins/cutecaptcha/images/2.gif',
+    'lion' => array('path' => '2.gif',
         'messages' => array('Choose the lion to win.', 'Really big pussycat.')
     ),
 
-    'monkey' => array('path' => '/wp-content/plugins/cutecaptcha/images/3.gif',
+    'monkey' => array('path' => '3.gif',
         'messages' => array('Who is on a skateboard?', 'Hit the monkey!')
     ),
-    'car' => array('path' => '/wp-content/plugins/cutecaptcha/images/4.gif',
+    'car' => array('path' => '4.gif',
         'messages' => array('The car will be the best choice for you.', 'Nice green and 4 wheels.')
     ),
-    'tent' => array('path' => '/wp-content/plugins/cutecaptcha/images/5.gif',
+    'tent' => array('path' => '5.gif',
         'messages' => array('I wonder what is in the yellow tent.')
     )
 
@@ -74,7 +75,7 @@ if (!class_exists("Cute_Captcha_Plugin")) {
 
         function comment_form()
         {
-            global $cute_captcha_options, $cute_captcha_images, $post;
+            global $cute_captcha_options, $cute_captcha_images, $post, $cute_captcha_path;
 
             if (is_user_logged_in() && 1 == $cute_captcha_options['hide_register']) {
                 return true;
@@ -112,7 +113,7 @@ if (!class_exists("Cute_Captcha_Plugin")) {
 
                 echo ' <input name="submit" type="submit" title="Submit" value="' . md5($this->key . $pLabel . $post->ID) .
                     '" class="colorButton" style="background: transparent url(' .
-                    $value['path'] .
+                    $cute_captcha_path.$value['path'] .
                     ') no-repeat scroll 0 0;"/>';
             }
             echo ' <input name="submit" type="submit" title="Submit" value="Submit" class="whiteButton" />';
