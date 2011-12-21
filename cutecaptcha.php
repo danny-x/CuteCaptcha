@@ -1,14 +1,14 @@
 <?php
 /*
 Plugin Name: Cute Captcha
-Plugin URI: http://www.arcweb.ro
+Plugin URI: http://www.arcweb.ro/cutecaptcha
 Version: v1.00
 Author: <a href="http://www.arcweb.ro/">Danny</a>
 Description: A cute Captcha plugin for WordPress comments.
+License: Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported
 */
 
-/* TODO important
-   This plugin is not planned for cached pages, due to using a session variable to validate comments.
+/*
    It is possible to set a custom key in $cute_captcha_options['cached'] to enable the use with cached pages
    and/or disable session use, however the protection is not as good it will only prevent most of the bots to post.
 */

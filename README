@@ -1,7 +1,7 @@
 This is my first WordPress plugin that i made it for personal use and to learn how to build plugins.
 This plugin replaces the submit button on the post comment section with a set of buttons from images.
 A small message provides the user a hint on what button to use to submit the comment.
-Demo
+Demo: http://www.arcweb.ro/blog/2011/12/21/testing-cutecaptcha-plugin/
 
 Requirements:
 
