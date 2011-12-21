@@ -1,0 +1,24 @@
+#submit { display: none;}
+.whiteButton
+{
+    background: none;
+    background-repeat:no-repeat;
+    overflow:hidden;
+    border: NONE;
+    width: 1px; /*width of image*/
+    height: 1px; /*height of image*/
+    font-size: 0;
+    padding: 0 0 0 1px;
+    cursor:pointer;
+}
+.colorButton {
+    background: none;
+    background-repeat:no-repeat;
+    overflow:hidden;
+    border: NONE;
+    width: 45px; /*width of image*/
+    height: 45px; /*height of image*/
+    font-size: 0;
+    padding: 0 0 0 45px;
+    cursor:pointer;
+}
